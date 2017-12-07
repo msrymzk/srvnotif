@@ -1,0 +1,19 @@
+Tweet portscan source IP address
+
+iptables -A INPUT -j LOG --log-prefix "[ip4](I) " --log-level 7 
+ip6tables -A INPUT -i eth0 -j LOG --log-prefix "[ip6](I) " --log-level 7 
+
+/etc/rsyslog.conf
+kern.=debug						|/var/tmp/syslog.fifo
+
+$ bundle install --path vendor/bundle
+
+$ cat config.json
+{
+  "APP_KEY":"your app key",
+  "APP_SECRET":"your app secret",
+  "OAUTH_TOKEN":"your oauth token",
+  "OAUTH_TOKEN_SECRET":"your oauth token secret"
+}
+
+$ bundle exec ruby srvnotif.rb /var/tmp/syslog.fifo
